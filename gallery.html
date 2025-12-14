@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="gallery-grid" id="gallery-grid">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+        <img src="progvar.jfif" alt="First Programming Varsity Output" onclick="openModal(this)" data-caption="My first output during our early programming varsity training.">
+        <img src="javabook.jfif" alt="Java Book Used During 1st Semester" onclick="openModal(this)" data-caption="A book that helped me learn Java.">
+        <img src="itcchristmas.jfif" alt="Final ITC Project" onclick="openModal(this)" data-caption="Our final project for the ITC course.">
+        <img src="hackathon.jfif" alt="Practice for Hackathon Event" onclick="openModal(this)" data-caption="Preparing for a hackathon event (goofy activities).">
+        <img src="love.jfif" alt="My Girlfriend and I" onclick="openModal(this)" data-caption="A memorable moment with my girlfriend.">
+        <img src="slc.jfif" alt="Me During the Scholars Leadership Camp" onclick="openModal(this)" data-caption="An unforgettable experience: the Scholars Leadership Camp.">
+        <img src="ps.jfif" alt="My Presidential Scholar Family" onclick="openModal(this)" data-caption="The first official meeting with my Presidential Scholar family.">
+        <img src="dost.jfif" alt="My DOST Family" onclick="openModal(this)" data-caption="A cherished moment with my DOST family.">
+        </div>
+    </div>
+
+    <div id="modal">
+        <span onclick="closeModal()">&times;</span>
+        <img id="modal-img" src="">
+        <p id="modal-caption"></p>
+    </div>
+</body>
+
+<script>
+    function openModal(imgElement) {
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalCaption = document.getElementById('modal-caption');
+
+        modalImg.src = imgElement.src;
+        modalCaption.textContent = imgElement.getAttribute('data-caption') || '';
+        modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+</script>
+</html>
